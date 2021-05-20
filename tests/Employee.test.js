@@ -6,19 +6,19 @@ test("create new Employee instance", () => {
 });
 
 test("set name by constructor method", () => {
-  const name = "";
+  const name = "jose";
   const e = new Employee(name);
   expect(e.name).toBe(name);
 });
 
 test("set id by constructor method", () => {
-  const id = "";
+  const id = "24";
   const e = new Employee(id);
-  expect(id).toBe(id);
+  expect(e.id).toBe(id);
 });
 
-test("set name by constructor method", () => {
-  const email = "";
+test("set email by constructor method", () => {
+  const email = "123@gmail";
   const e = new Employee(email);
-  expect(email).toBe(email);
+  expect(e.email).toBe(email);
 });
