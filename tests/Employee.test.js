@@ -13,12 +13,17 @@ test("set name by constructor method", () => {
 
 test("set id by constructor method", () => {
   const id = "24";
-  const e = new Employee(id);
+  const e = new Employee("jose", id);
   expect(e.id).toBe(id);
 });
 
 test("set email by constructor method", () => {
   const email = "123@gmail";
-  const e = new Employee(email);
+  const e = new Employee("jose", "24", email);
   expect(e.email).toBe(email);
+});
+
+test("set getRole by constructor method", () => {
+  const e = new Employee("jose", "24", "123@gmail");
+  expect(e.getRole()).toBe("Employee");
 });
