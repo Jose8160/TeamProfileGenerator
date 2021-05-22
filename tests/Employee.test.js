@@ -27,3 +27,15 @@ test("set getRole by constructor method", () => {
   const e = new Employee("jose", "24", "123@gmail");
   expect(e.getRole()).toBe("Employee");
 });
+
+test("set getId by constructor method", () => {
+  const id = "24";
+  const e = new Employee("jose", "24", "123@gmail");
+  expect(e.getId()).toBe(id);
+});
+
+test("set getEmail by constructor method", () => {
+  const email = "123@gmail";
+  const e = new Employee("jose", "24", email);
+  expect(e.getEmail()).toBe(email);
+});
