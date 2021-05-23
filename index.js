@@ -62,7 +62,6 @@ function init() {
             if (managerRes.restart === "Yes") {
               init();
             } else {
-              writeHTML(render(team));
             }
 
             console.log(team);
@@ -95,7 +94,6 @@ function init() {
             if (engineerRes.restart === "Yes") {
               init();
             } else {
-              writeHTML(render(team));
             }
 
             console.log(team);
@@ -124,25 +122,22 @@ function init() {
               response.email,
               internRes.school
             );
-            team.push(newIntern);
-            if (internRes.restart === "Yes") {
-              init();
-            } else {
-              writeHTML(render(team));
+            function writeToFile(fileName, data) {
+              return fs.writeFileSync(path.join(process.cwd(), fileName), data);
             }
 
             console.log(team);
           });
       }
     });
+  const writeHTML = (HTML) => {
+    fs.writeFileSync(src_path, HTML, (err) => {
+      if (err) {
+        return console.log(err);
+      }
+    });
+  };
 }
-const writeHTML = (HTML) => {
-  fs.writeFileSync(src_path, HTML, (err) => {
-    if (err) {
-      return console.log(err);
-    }
-  });
-};
 
 init();
 
